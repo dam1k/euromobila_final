@@ -1,6 +1,6 @@
 .product {
     display:grid;
-    grid-template-columns:repeat(2,1fr)
+    grid-template-columns:repeat(2, 50%)
 }
 
 .product-data {
@@ -59,7 +59,8 @@ h1{
 
 .product-img-preview-container {
     display:grid;
-    grid-auto-flow: column;
+    grid-template-columns:repeat(5, 1fr);
+
     grid-gap:5px;
     margin-top:20px;
     justify-content:center;
@@ -187,7 +188,7 @@ opacity:1 !important;
 
 @media only screen and (max-width: 870px) {
     .product {
-        grid-template-columns:1fr !important;
+        grid-template-columns:100% !important;
     }
     .product-data h1 {
         text-align:center;
@@ -207,4 +208,8 @@ opacity:1 !important;
     display:flex;
     justify-content:center;
     }
+}
+
+@media only screen and (max-width: 620px) {
+
 }
