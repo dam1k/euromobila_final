@@ -1,0 +1,52 @@
+#main-nav {
+    display:flex;
+    padding:1rem 5rem;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    background-color:#eee;
+}
+
+img {
+    width:150px;
+}
+
+.menu {
+    display: flex;
+    flex-direction:column;
+    position:absolute;
+    top:100%;
+    right:0;
+    transform:translateX(100%);
+    width:100%;
+    z-index:10;
+    transition: all 0.5s ease;
+    background-color:#eee;
+
+    .link {
+        padding:1rem;
+        text-align:center;
+    }
+    .link:hover {
+        font-weight:bold;
+    }
+}
+
+.menu.active {
+transform:translateX(0)
+}
+
+.burger {
+ cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  margin-left:50px;
+}
+
+.navigation {
+ display:flex;
+ align-items:center;   
+ flex-direction:row-reverse;
+}
+
+

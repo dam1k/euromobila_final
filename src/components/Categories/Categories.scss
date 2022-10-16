@@ -1,0 +1,50 @@
+.categories {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.category {
+    width:300px;
+    height:300px;
+    position:relative;
+    background-position: center;
+    background-size: cover;
+    border-radius:10px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.category-canapele {
+    background-image: url('../../assets/images/canapea.jpeg');
+    background-position: left;
+}
+
+.category-fotolii {
+    background-image: url('../../assets/images/fotoliu.jpg')
+}
+
+.category-coltare {
+    background-image: url('../../assets/images/coltar.jpeg')
+}
+
+.category-navigation {
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+.category-navigation:hover {
+    opacity:0.8;
+}
+
+@media only screen and (max-width:764px) {
+.category {
+width:350px;
+height:350px;
+}
+}
+
+
