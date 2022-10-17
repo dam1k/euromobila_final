@@ -49,10 +49,12 @@ const MobileSearch = () => {
 
           {(showSearchBar && searchResults?.length > 0 && searchTerm !== '') && ( 
           <div className="results-container">
-            {searchResults.map(result => {
+            {searchResults && searchResults.map(result => {
+              console.log(result)
               return (  
               <div onClick={() => goToResult(result.category, result._id)} key={result._id} className="result">
                 <h3>{result.name}</h3>
+                
                 {result.images && <img src={urlFor(result.images[0].asset._ref).url()}/>}
                 </div>
               )
