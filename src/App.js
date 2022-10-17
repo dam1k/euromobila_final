@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
@@ -12,8 +11,6 @@ import useUIContext from './UIContext';
 import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom"
 
 function App() {
-const {setActiveNavbar, setShowResults} = useUIContext()
-
   return (
     <Router>
     <div className="App">

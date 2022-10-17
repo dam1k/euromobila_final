@@ -119,7 +119,7 @@ return (
       </div>
 
             <div className="product-data">
-              <h1 className="product-name">{productData.name}</h1>
+              <h1 className="product-page-product-name">{productData.name}</h1>
             
               <div className="product-desc">
                 <div>

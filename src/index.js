@@ -8,6 +8,6 @@ root.render(
   <React.StrictMode>
     <UIContextProvider>
     <App />
-    </UIContextProvider>s
+    </UIContextProvider>
   </React.StrictMode>
 );
