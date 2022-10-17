@@ -3,6 +3,8 @@ import {useParams} from "react-router-dom"
 import {client, urlFor} from "../client"
 import {useState, useEffect, useRef} from "react"
 import {BsArrowRightCircle} from "react-icons/bs"
+import {BsFillArrowRightSquareFill} from "react-icons/bs"
+import {BsFillArrowLeftSquareFill} from "react-icons/bs"
 import {BsArrowLeftCircle} from "react-icons/bs"
 import {FaTimes} from "react-icons/fa"
 import { productQuery } from '../utils/data'
@@ -86,8 +88,8 @@ return (
           <div className="product">
       <div className="product-img-container">
             <div className="product-img">
-    <button className="prev-btn" onClick={showPrev}><BsArrowLeftCircle size={30}/></button>
-    <button className="next-btn" onClick={showNext}><BsArrowRightCircle size={30}/></button>
+    <button className="prev-btn" onClick={showPrev}><BsFillArrowLeftSquareFill className="navigation-button" color='#fff' size={30}/></button>
+    <button className="next-btn" onClick={showNext}><BsFillArrowRightSquareFill className="navigation-button" color='#fff' size={30}/></button>
       {productData.images?.length > 0 &&
        <img ref={imageRef} 
        className={`product-image ${transition ? 'transition' : ''}`} 
@@ -129,7 +131,7 @@ return (
               </div>
               
               <div className="fabric-types">
-              <p>Alege tipul de stofă pentru a vedea pretul</p>
+              <p className="fabric-types-choose">Alege tipul de stofă pentru a vedea pretul</p>
               <div>
 
                 {productData.stofe?.length === 1 &&
