@@ -106,7 +106,7 @@ return (
 
        <div 
        style={{ 
-        gridTemplateColumns: `repeat(${productData.images.length}, 1fr)`
+        gridTemplateColumns: `repeat(${productData.images.length > 2 ? productData.images.length : 3}, 1fr)`
        }}
        className="product-img-preview-container">
         {productData.images.map(image => {
@@ -119,7 +119,7 @@ return (
       </div>
 
             <div className="product-data">
-              <h1>{productData.name}</h1>
+              <h1 className="product-name">{productData.name}</h1>
             
               <div className="product-desc">
                 <div>

@@ -11,6 +11,7 @@ const MobileSearch = () => {
      const [searchResults, setSearchResults] = useState([])
      const [showSearchBar, setShowSearchBar] = useState(false)
      const navigate = useNavigate()
+     const formRef = useRef()
      const inputRef = useRef()
 
      useEffect(() => { 
@@ -27,10 +28,22 @@ const MobileSearch = () => {
             setSearchResults([])
           }
         }, [searchTerm])
+
+        useEffect(() => {
+          function hideResults(e) {
+           if(!formRef.current.contains(e.target)) {
+            setSearchResults([])
+           }
+          }
+          window.addEventListener('click', hideResults)
+       
+          return () => window.removeEventListener('click', hideResults)
+         }, [])
       
         function goToResult(category, id) {
           navigate(`/canapele/${category}/${id}`)
           setSearchTerm('')
+          setShowSearchBar(false)
         }
 
      return (
@@ -43,7 +56,7 @@ const MobileSearch = () => {
                 <FiSearch size={20} className={`search-icon ${showSearchBar ? 'active' : ''}`}/>
                 </div>
           {showSearchBar && 
-          (<form className="mobile-search">
+          (<form ref={formRef} className="mobile-search">
             <input autoFocus={true} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Mobile Search" value={searchTerm}/>
           </form> )}
 
