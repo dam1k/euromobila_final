@@ -45,7 +45,7 @@ const Navbar = () => {
   </div>
   <div className="navigation">
   <ul className={`menu ${activeNavbar ? "active": ''}`}>
-  <Link to="/canapele"><li className="link" onClick={() => {setActiveNavbar(false)}}>Canapele</li></Link>
+  <Link to="/canapele"><li className="link" onClick={() => setActiveNavbar(false)}>Canapele</li></Link>
   <Link to="/coltare"><li className="link" onClick={() => setActiveNavbar(false)}>Coltare</li></Link>
   <Link to="/fotolii"><li className="link" onClick={() => setActiveNavbar(false)}>Fotolii</li></Link>
   <Link to="/paturi"><li className="link" onClick={() => setActiveNavbar(false)}>Paturi</li></Link>
@@ -53,7 +53,9 @@ const Navbar = () => {
 
   </ul>
 
-  <div ref={menuRef} className="burger" onClick={() => setActiveNavbar(prev => !prev)}>
+  <div ref={menuRef} className="burger" onClick={() => {
+    console.log('clicked')
+    setActiveNavbar(prev => !prev)}}>
     <GiHamburgerMenu/>
   </div>
   {width > breakpoint && <Search/>}

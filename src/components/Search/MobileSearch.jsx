@@ -47,13 +47,13 @@ const MobileSearch = () => {
             <input autoFocus={true} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Mobile Search" value={searchTerm}/>
           </form> )}
 
-          {(showSearchBar && searchResults.length > 0 && searchTerm !== '') && ( 
+          {(showSearchBar && searchResults?.length > 0 && searchTerm !== '') && ( 
           <div className="results-container">
             {searchResults.map(result => {
               return (  
               <div onClick={() => goToResult(result.category, result._id)} key={result._id} className="result">
                 <h3>{result.name}</h3>
-                <img src={urlFor(result.images[0].asset._ref).url()}/>
+                {result.images && <img src={urlFor(result.images[0].asset._ref).url()}/>}
                 </div>
               )
             })}

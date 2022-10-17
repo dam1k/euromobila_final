@@ -10,11 +10,14 @@ box-sizing:border-box;
 --brown_color: #1F1300;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family:Arial;
     overflow-x:hidden;
     font-family: 'Lato', sans-serif;
-    overflow-x:hidden;
 }
 
 li {
@@ -53,4 +56,10 @@ h1 {
     background-color: var(--brown_color);
     color:#fff;
     font-family: 'Lato';
+}
+
+@media only screen and (max-width: 600px){
+    .container {
+        padding:2rem;
+    }
 }

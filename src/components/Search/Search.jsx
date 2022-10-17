@@ -15,7 +15,7 @@ const Search = () => {
      const formRef = useRef()
      const inputRef = useRef()
 
-     useEffect(() => { 
+        useEffect(() => { 
           if(searchTerm !== '') {
       
           const query = searchQuery(searchTerm)
@@ -64,10 +64,11 @@ const Search = () => {
      {(searchResults.length > 0 && searchTerm !== '') && ( 
      <div className="results-container">
        {searchResults.map(result => {
+        console.log(result)
          return (  
          <div onClick={() => goToResult(result.category, result._id)} key={result._id} className="result">
            <h3>{result.name}</h3>
-           <img src={urlFor(result.images[0].asset._ref).url()}/>
+           {result.images && <img src={urlFor(result.images[0].asset._ref).url()}/>}
            </div>
          )
        })}

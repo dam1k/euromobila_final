@@ -58,9 +58,8 @@ h1{
 }
 
 .product-img-preview-container {
+    max-width:100%;
     display:grid;
-    grid-template-columns:repeat(5, 1fr);
-
     grid-gap:5px;
     margin-top:20px;
     justify-content:center;
@@ -72,10 +71,10 @@ h1{
     }
 }
 
-.product-img-preview {
-    img {
-        object-fit:cover;
-    }
+img.product-img-preview {
+    object-fit:cover;
+    height:auto;
+    width:100%;
 }
 
 

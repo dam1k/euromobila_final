@@ -104,7 +104,11 @@ return (
         </ProductModal>
        </div>
 
-       <div className="product-img-preview-container">
+       <div 
+       style={{ 
+        gridTemplateColumns: `repeat(${productData.images.length}, 1fr)`
+       }}
+       className="product-img-preview-container">
         {productData.images.map(image => {
           return <img onClick={() => changeImage(image)}
           key={image.asset._ref} 
