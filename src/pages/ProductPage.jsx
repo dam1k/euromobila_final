@@ -11,7 +11,7 @@ import { productQuery } from '../utils/data'
 import './ProductPage.scss'
 import "../App.css"
 import ProductModal from '../components/Product/ProductModal'
- 
+
 const ProductPage = () => {
   const [productData, setProductData] = useState(null)
   const [currentImageIndex, setCurrentImageIndex ] = useState(0)

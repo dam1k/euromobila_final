@@ -18,14 +18,16 @@ const Navbar = () => {
   const menuRef = useRef()
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      setWidth(window.innerWidth)
-    })
-  }, [])
+    function resize() {
+        setWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize)
+  }, []);
 
   useEffect(() => {
     setActiveNavbar(false)
-  }, [navigate])
+  }, [navigate]);
 
   useEffect(() => {
    function closeNav(e) {
@@ -36,7 +38,7 @@ const Navbar = () => {
    window.addEventListener('click', closeNav)
 
    return () => window.removeEventListener('click', closeNav)
-  }, [])
+  }, []);
   
   return (
     <nav id="main-nav">
@@ -50,21 +52,18 @@ const Navbar = () => {
   <Link to="/fotolii"><li className="link" onClick={() => setActiveNavbar(false)}>Fotolii</li></Link>
   <Link to="/paturi"><li className="link" onClick={() => setActiveNavbar(false)}>Paturi</li></Link>
   <Link to="/despre-noi"><li className="link" onClick={() => setActiveNavbar(false)}>Despre Noi</li></Link>
-
   </ul>
 
   <div ref={menuRef} className="burger" onClick={() => {
-    console.log('clicked')
     setActiveNavbar(prev => !prev)}}>
     <GiHamburgerMenu/>
   </div>
+
   {width > breakpoint && <Search/>}
   {width < breakpoint && <MobileSearch/>}
     </div>
 </nav>
 )
 }
-
-
 
 export default Navbar

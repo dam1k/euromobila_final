@@ -44,8 +44,8 @@ const Header = () => {
         return <SwiperSlide key={item._id}>
           <HeaderSlide showNext={showNext} showPrev={showPrev} image={item.image} info={item.info}/></SwiperSlide>
       })}
-   <button className="prev-btn" onClick={showPrev}><BsArrowLeftCircle size={30}/></button>
-    <button className="next-btn" onClick={showNext}><BsArrowRightCircle size={30}/></button>
+   <button className="prev-btn" onClick={showPrev}><BsArrowLeftCircle color='#fff' size={30}/></button>
+    <button className="next-btn" onClick={showNext}><BsArrowRightCircle color='#fff' size={30}/></button>
     </Swiper>
       </div>
       </>

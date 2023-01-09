@@ -12,7 +12,7 @@ const MobileSearch = () => {
      const [showSearchBar, setShowSearchBar] = useState(false)
      const navigate = useNavigate()
      const formRef = useRef()
-     const inputRef = useRef()
+    //  const inputRef = useRef()
 
      useEffect(() => { 
           if(searchTerm !== '') { 
@@ -50,14 +50,13 @@ const MobileSearch = () => {
           <div className="mobile-search-container">
                <div onClick={() => {
                     setShowSearchBar(prev => !prev) 
-
                }}
                 className="search-icon-container">
                 <FiSearch size={20} className={`search-icon ${showSearchBar ? 'active' : ''}`}/>
                 </div>
           {showSearchBar && 
           (<form ref={formRef} className="mobile-search">
-            <input autoFocus={true} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Mobile Search" value={searchTerm}/>
+            <input autoFocus={true} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search" value={searchTerm}/>
           </form> )}
 
           {(showSearchBar && searchResults?.length > 0 && searchTerm !== '') && ( 
