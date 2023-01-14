@@ -6,8 +6,8 @@ import Footer from './components/Footer/Footer';
 import Products from './pages/Products';
 import ProductPage from "./pages/ProductPage"
 import About from "./pages/About"
+import NotFound from "./pages/NotFound"
 import CategoriesPage from './pages/CategoriesPage';
-import useUIContext from './UIContext';
 import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom"
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="/:categoryName" element={<CategoriesPage/>}/>
         <Route path="/:categoryName/:categoryType/:productId" element={<ProductPage/>}/>
         <Route path="/despre-noi" element={<About/>}/>
+        <Route path="/notfound" element={<NotFound/>}/>
 
       </Routes>
       <Footer className="footer-class"/>

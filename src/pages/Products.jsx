@@ -8,6 +8,7 @@ import { searchByCategoryQuery,
 import {useParams} from "react-router-dom"
 import Product from '../components/Product/Product'
 import "./Products.scss"
+import Spinner from '../components/Spinner'
 
 const Products = () => {
 const {categoryType} = useParams()
@@ -40,8 +41,6 @@ const [sortBy, setSortBy] = useState(localStorage.getItem('sortBy') || 'default'
     }
   }, [sortBy])
 
-
-
   function sort(sortQuery, order) {
       const query = sortQuery(categoryType)
 
@@ -56,6 +55,9 @@ const [sortBy, setSortBy] = useState(localStorage.getItem('sortBy') || 'default'
       .catch(err => console.log(err))
     }  
 
+if(products === null) {
+return <Spinner/>
+}
 
   return (
     <div className="container">

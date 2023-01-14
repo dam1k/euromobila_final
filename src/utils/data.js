@@ -1,6 +1,6 @@
 //Get all products from a certain category
 export const searchByCategoryQuery = (category) => {
-const query = `*[_type == 'product' && category match '${category}*']{ 
+const query = `*[_type == 'product' && category match '${category}']{ 
     images,
     _id,
     name,
@@ -26,7 +26,7 @@ return query
 
 //Get all data about a certain product
 export const productQuery = (productId) => {
-    const query = `*[_type == 'product' && _id match '${productId}*']`
+    const query = `*[_type == 'product' && _id match '${productId}']`
     
     return query
     }
@@ -60,11 +60,11 @@ export const filterByName= (category) => {
 
 
 export const categoryTypeQuery = (categoryType) => {
-    const query = `*[_type == 'categoryType' && parentCategory match '${categoryType}*']`
+    const query = `*[_type == 'categoryType' && parentCategory match '${categoryType}']`
     return query
 }
 
 export const categoryInfoQuery = (categoryName) => {
-    const query = `*[_type == 'categoryInfo' && name match '${categoryName}*']`
+    const query = `*[_type == 'categoryInfo' && name match '${categoryName}']`
     return query
 }

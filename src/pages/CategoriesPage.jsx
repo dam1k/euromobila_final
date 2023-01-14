@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import {client, urlFor} from "../client"
 import { categoryInfoQuery, categoryTypeQuery } from '../utils/data'
 import './CategoriesPage.scss'
+import Spinner from '../components/Spinner'
 
 const CategoriesPage = () => {
   const [categoryInfo, setCategoryInfo] = useState([])
@@ -17,7 +18,12 @@ const CategoriesPage = () => {
 
     client.fetch(query)
     .then(data => {
-      setCategoryInfo(data[0])
+      if(data[0] !== undefined) {
+    setCategoryInfo(data[0])
+      }
+      else {
+        navigate('/notfound')
+      }
     })
     .catch(err => console.log(err))
 
@@ -30,10 +36,12 @@ const CategoriesPage = () => {
     } 
     
     fetchData(categoryName)
-
+    console.log(categoryName);
   }, [categoryName])
 
-
+  if(categoryInfo.length === 0 || categoryTypes.length === 0) {
+    return <Spinner/>
+  }
   return (
     <div id="categories" className="container">
       <div>

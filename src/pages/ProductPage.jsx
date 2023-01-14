@@ -11,6 +11,7 @@ import { productQuery } from '../utils/data'
 import './ProductPage.scss'
 import "../App.css"
 import ProductModal from '../components/Product/ProductModal'
+import Spinner from '../components/Spinner'
 
 const ProductPage = () => {
   const [productData, setProductData] = useState(null)
@@ -23,6 +24,7 @@ const ProductPage = () => {
   const [price, setPrice] = useState(null)
   const [currentInfo, setCurrentInfo] = useState('Informatii Generale')
   const [transition, setTransition] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth)
 
   const activePrice = isCurrentOne || isCurrentTwo || isCurrentThree
 
@@ -35,10 +37,19 @@ const ProductPage = () => {
     client.fetch(query)
     .then(data => {
       setProductData(data[0]) 
+      console.log(data[0])
       setProductInfo(data[0].productInfo)
     })
     .catch(err => console.log(err))
   }, [productId])
+
+  useEffect(() => {
+    function resizeWindow() {
+        setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', resizeWindow)
+    return () => window.removeEventListener('resize', resizeWindow);
+  }, [window.innerWidth])
   
   function showPrev() {
     setTransition(true)
@@ -80,7 +91,10 @@ function changeImage(image) {
       setTransition(false)
     }, 300)
 }
-  
+  if(productData === null) {
+    return <Spinner/>
+  }
+
 return (
     <>
       {productData !== null && (
@@ -159,8 +173,8 @@ return (
                   }}>{productData.stofe[1].name}</button>
                 </>}
 
-                {productData.stofe?.length === 3 &&
-                <>
+                {(productData.stofe?.length === 3) &&
+                <div className={width < 500 ? 'flex-buttons': ''}>
                 <button className={`fabric-type ${isCurrentOne ? 'active' : ''}`} onClick={() => {
                   setCurrentOne(prev => !prev) 
                   setCurrentTwo(false)
@@ -181,7 +195,7 @@ return (
                   setCurrentTwo(false)
                   setProductPrice(2)
                   }}>{productData.stofe[2].name}</button>
-                </>}
+                </div>}
 
                 </div>
                 <p className={`price ${activePrice ? 'active-price' : ''}`}>
@@ -261,22 +275,45 @@ return (
               {productInfo[0].material_de_acoperire?.map(item => {
                 return <p key={item}>{item}</p>
               })}
-              {productInfo[0].perne_spatar?.map(item => {
-                return <p key={item}>{item}</p>
-              })}
               </div>
               </div>)}
 
-              
+              {productInfo[0].perne_spatar && <div> 
+                <h2>Perne spatar</h2>
+              {productInfo[0].perne_spatar?.map(item => {
+                return <p key={item}>{item}</p>
+              })}
+              </div>}
+
+              {productInfo[0].perne_brate && <div> 
+                <h2>Perne brate</h2>
+              {productInfo[0].perne_brate?.map(item => {
+                return <p key={item}>{item}</p>
+              })}
+              </div>}
+
+              {productInfo[0].sezut_c2_extensibil && <div> 
+                <h2>Sezut C2</h2>
+                {productInfo[0].sezut_c2_extensibil?.map(item => {
+                return <p key={item}>{item}</p>
+              })}
+              </div>}
+
+              {productInfo[0].additional_info && <div> 
+                {productInfo[0].additional_info?.map(item => {
+                return <p key={item}>{item}</p>
+              })}
+              </div>}
+
+              {productInfo[0].sezut_spa && <div> 
+                {productInfo[0].additional_info?.map(item => {
+                return <p key={item}>{item}</p>
+              })}
+              </div>}
               </div>
               }
             </div>
             }
-
-
-
-
-            
             </div>
                 } 
               </div>

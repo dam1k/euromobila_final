@@ -2,6 +2,7 @@ export default {
      name: 'productInfo',
      title: 'Product Info',
      type: 'object',
+     liveEdit: true,
      fields: [
           {
                name: 'dimensiuni',
@@ -40,7 +41,30 @@ export default {
                title: 'Perne Spatar',
                type: 'array',
                of: [{type: 'string'}]
+           },
+           {
+               name: 'sezut_c2_extensibil',
+               title: 'Sezut C2 Extensibil',
+               type: 'array',
+               of: [{type: 'string'}]
+           },
+           {
+               name: 'perne_brate',
+               title: 'Perne Brate',
+               type: 'array',
+               of: [{type: 'string'}]
+           },
+          { 
+           name: 'sezut_spatar',
+           title: 'Sezut Spatar',
+           type: 'array',
+           of: [{type: 'string'}]
+          },
+           {
+               name: 'additional_info',
+               title: 'Additional Info',
+               type: 'array',
+               of: [{type: 'string'}]
            }
-
      ]
 }

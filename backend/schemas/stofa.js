@@ -2,6 +2,7 @@ export default {
      name: 'stofa',
      title: 'Stofa',
      type: 'object',
+     liveEdit: true,
 
      fields: [ 
          {

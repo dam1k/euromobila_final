@@ -2,6 +2,7 @@ export default {
      name: 'categoryInfo',
      title: 'Category Info',
      type: 'document',
+     liveEdit: true,
      fields: [
           {
                name: 'name',

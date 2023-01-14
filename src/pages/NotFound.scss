@@ -1,0 +1,17 @@
+// body {
+//      background: red;
+// }
+
+.not-found {
+     height:100vh;
+     width:100vw;
+     display:flex;
+     font-size:8vw;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color:#CEB7B3;
+     .brown-btn {
+          margin-top:40px;
+     }
+}

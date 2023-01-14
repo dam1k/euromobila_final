@@ -219,6 +219,25 @@ opacity:1 !important;
     display:flex;
     justify-content:center;
     }
+    .product-desc {
+        text-align: center;
+    }
 }
 
+.product-info div div {
+    margin:1rem 0;
+}
+
+.structure-category, .info-category {
+    padding-top:0;
+}
+
+.fabric-type {
+    margin-right:0.5rem;
+}
+
+.flex-buttons {
+    display:flex;
+    flex-direction: column;
+}
 

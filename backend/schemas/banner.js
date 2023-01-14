@@ -2,6 +2,7 @@ export default {
     name: 'banner',
     title: 'Banner',
     type: 'document',
+    liveEdit: true,
     fields: [
         {
             name: 'image',
