@@ -9,15 +9,18 @@ import fotoliu from "../../assets/images/fotoliu.jpg"
 const data = [
     {
         name: 'canapele',
-        image: [canapea]
+        image: [canapea],
+        path: '/canapele'
     },
     {
         name: 'coltare',
-        image: [coltar]
+        image: [coltar],
+        path: '/coltare'
     },
     {
         name: 'fotolii',
-        image: [fotoliu]
+        image: [fotoliu],
+        path: '/fotolii-si-tabureti'
     }
 ]
 

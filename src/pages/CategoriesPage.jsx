@@ -4,8 +4,11 @@ import {client, urlFor} from "../client"
 import { categoryInfoQuery, categoryTypeQuery } from '../utils/data'
 import './CategoriesPage.scss'
 import Spinner from '../components/Spinner'
+import { setDocumentTitle } from '../utils/setDocumentTitle'
 
 const CategoriesPage = () => {
+  setDocumentTitle('Euromobila | Despre Noi')
+  
   const [categoryInfo, setCategoryInfo] = useState([])
   const [categoryTypes, setCategoryTypes] = useState([])
   const { categoryName } = useParams()

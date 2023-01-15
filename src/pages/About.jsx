@@ -1,8 +1,10 @@
 import React from 'react'
 import AboutImage from "../assets/images/euromobila_about.jpg"
 import './About.scss'
+import { setDocumentTitle } from '../utils/setDocumentTitle'
 
 const About = () => {
+  setDocumentTitle('Euromobila | Despre Noi')
   return (
     <div className="about container">
        <h1>Despre Noi.</h1>

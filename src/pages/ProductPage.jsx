@@ -12,6 +12,7 @@ import './ProductPage.scss'
 import "../App.css"
 import ProductModal from '../components/Product/ProductModal'
 import Spinner from '../components/Spinner'
+import { setDocumentTitle } from '../utils/setDocumentTitle'
 
 const ProductPage = () => {
   const [productData, setProductData] = useState(null)
