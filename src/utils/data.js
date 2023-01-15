@@ -31,8 +31,10 @@ export const productQuery = (productId) => {
     return query
     }
 
-// const furnitureDetailsQuery = ``
-export const bannerQuery = `*[_type == 'banner'] | order(name)`
+export const bannerQuery = () => {
+const query = `*[_type == 'banner'] | order(name)`;
+return query
+}
 
 export const filterByPrice = (category) => {
     const query = `*[_type == 'product' && category match '${category}*'] | order(price) { 
