@@ -8,6 +8,7 @@ import categoryType from "./categoryType"
 import categoryInfo from "./categoryInfo"
 import stofa from "./stofa"
 import productInfo from './productInfo'
+import shipping from "./shipping"
 // import siteSettings from "./siteSettings"
 export default createSchema({
   // We name our schema
@@ -20,6 +21,7 @@ export default createSchema({
     categoryType,
     categoryInfo,
     stofa,
-    productInfo
+    productInfo,
+    shipping
   ]),
 })

@@ -1,0 +1,17 @@
+.contact-flex {
+     display:flex;
+     justify-content: space-between;
+}
+
+.contact .contact-info {
+     h3 {
+          font-size:36px;
+          font-family: 'Raleway';
+     }
+     p {
+          font-family: 'Lato'
+     }
+     .orar {
+          margin-top:2rem;
+     }
+}

@@ -51,6 +51,7 @@ const Navbar = () => {
   <Link to="/coltare"><li className="link" onClick={() => setActiveNavbar(false)}>Coltare</li></Link>
   <Link to="/fotolii-si-tabureti"><li className="link" onClick={() => setActiveNavbar(false)}>Fotolii</li></Link>
   <Link to="/paturi"><li className="link" onClick={() => setActiveNavbar(false)}>Paturi</li></Link>
+  <Link to="/contact"><li className="link" onClick={() => setActiveNavbar(false)}>Contacte</li></Link>
   <Link to="/despre-noi"><li className="link" onClick={() => setActiveNavbar(false)}>Despre Noi</li></Link>
   </ul>
 

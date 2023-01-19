@@ -67,3 +67,5 @@ export const categoryInfoQuery = (categoryName) => {
     const query = `*[_type == 'categoryInfo' && name match '${categoryName}']`
     return query
 }
+
+export const shippingInfoQuery = `*[_type == 'shipping']`
