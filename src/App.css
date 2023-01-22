@@ -104,3 +104,17 @@ h1 {
         font-size:40px;
     }
 }
+
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  #root {
+    flex: 1 0 auto;
+  }
+  .main-footer {
+    flex-shrink: 0;
+  }

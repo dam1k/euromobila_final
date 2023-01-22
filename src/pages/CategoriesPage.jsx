@@ -7,12 +7,11 @@ import Spinner from '../components/Spinner'
 import { setDocumentTitle } from '../utils/setDocumentTitle'
 
 const CategoriesPage = () => {
-  setDocumentTitle('Euromobila | Despre Noi')
-  
   const [categoryInfo, setCategoryInfo] = useState([])
   const [categoryTypes, setCategoryTypes] = useState([])
   const { categoryName } = useParams()
 
+  setDocumentTitle(`Euromobila | ${categoryName.slice(0, 1).toUpperCase() + categoryName.slice(1)}`)
   const navigate = useNavigate()
   
   useEffect(() => {

@@ -12,16 +12,14 @@ const MobileSearch = () => {
      const [showSearchBar, setShowSearchBar] = useState(false)
      const navigate = useNavigate()
      const formRef = useRef()
-    //  const inputRef = useRef()
 
      useEffect(() => { 
-          if(searchTerm !== '') { 
+          if(searchTerm.trim() !== '') { 
           const query = searchQuery(searchTerm)
       
             client.fetch(query)
           .then(data => {
-            setSearchResults(data)
-            console.log(data)})
+            setSearchResults(data)})
           .catch(err => console.log(err))
           } 
           else {
@@ -39,13 +37,21 @@ const MobileSearch = () => {
        
           return () => window.removeEventListener('click', hideResults)
          }, [])
-      
-        function goToResult(category, id) {
+
+         function goToResult(category, id) {
           navigate(`/canapele/${category}/${id}`)
           setSearchTerm('')
           setShowSearchBar(false)
         }
 
+          function goToFirstResult() {
+          if(searchResults.length > 0) {
+            goToResult(searchResults[0]?.category, searchResults[0]?._id)
+          } else {
+            return
+          }
+        }
+        
      return (
           <div className="mobile-search-container">
                <div onClick={() => {
@@ -55,14 +61,14 @@ const MobileSearch = () => {
                 <FiSearch size={20} className={`search-icon ${showSearchBar ? 'active' : ''}`}/>
                 </div>
           {showSearchBar && 
-          (<form ref={formRef} className="mobile-search">
+          (<form onSubmit={goToFirstResult} 
+          ref={formRef} className="mobile-search">
             <input autoFocus={true} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search" value={searchTerm}/>
           </form> )}
 
           {(showSearchBar && searchResults?.length > 0 && searchTerm !== '') && ( 
           <div className="results-container">
             {searchResults && searchResults.map(result => {
-              console.log(result)
               return (  
               <div onClick={() => goToResult(result.category, result._id)} key={result._id} className="result">
                 <h3>{result.name}</h3>

@@ -1,11 +1,36 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import "./Contact.scss";
 import {HiLocationMarker} from "react-icons/hi"
 import {MdEmail} from "react-icons/md"
 import {BsFillTelephoneInboundFill} from "react-icons/bs"
+import { setDocumentTitle } from '../utils/setDocumentTitle';
 
+const initialMapSize = {width: 700, height: 500}
 
 const Contact = () => {
+  setDocumentTitle('Euromobila | Contacte')
+  const [width, setWidth] = useState(window.innerWidth);
+  const [mapSize, setMapSize] = useState(initialMapSize);
+
+  useEffect(() => {
+    function resizeWindow() {
+        setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', resizeWindow)
+    return () => window.removeEventListener('resize', resizeWindow);
+  }, [window.innerWidth])
+  
+  useEffect(() => {
+    if(width < 1200) {
+      setMapSize({
+        width:'100%',
+        height: 400
+      })
+    } else {
+      setMapSize(initialMapSize);
+    }
+  }, [width])
+
   return (
     <div className="contact container">
      <h1 className="pageTitle">
@@ -23,7 +48,7 @@ const Contact = () => {
         <p>L-V 10:00 - 19:00, S,D - zile libere.</p>
       </div>
       <div className="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10872.610930780658!2d28.7582054!3d47.0568542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4600ef4d10d8e182!2sCreatorMall!5e0!3m2!1sen!2s!4v1674142166349!5m2!1sen!2s" width="700" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10872.610930780658!2d28.7582054!3d47.0568542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4600ef4d10d8e182!2sCreatorMall!5e0!3m2!1sen!2s!4v1674142166349!5m2!1sen!2s" width={mapSize.width} height={mapSize.height} style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
      </div>
      </div>

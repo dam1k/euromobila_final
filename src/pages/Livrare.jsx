@@ -2,8 +2,11 @@ import {useEffect, useState} from 'react'
 import { shippingInfoQuery } from '../utils/data'
 import { client } from '../client'
 import './Livrare.scss';
+import Spinner from "../components/Spinner";
+import {setDocumentTitle} from "../utils/setDocumentTitle"
 
 const Livrare = () => {
+     setDocumentTitle('Euromobila | Livrare')
      const [shippingInfo, setShippingInfo] = useState([]);
      useEffect(() => {
           const query = shippingInfoQuery;
@@ -11,10 +14,12 @@ const Livrare = () => {
           client.fetch(query)
           .then(result => {
                setShippingInfo(result);
-               console.log(result);
           }).catch(error => console.log(error))
      }, [])
 
+     if(shippingInfo.length < 1) {
+          return <Spinner/>
+     }
   return (
     <div className="livrare container">
      <h1 className="pageTitle">Livrare</h1>

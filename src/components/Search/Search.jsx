@@ -47,9 +47,17 @@ const Search = () => {
           setSearchTerm('')
         }
 
+        function goToFirstResult() {
+          if(searchResults.length > 0) {
+            goToResult(searchResults[0]?.category, searchResults[0]?._id)
+          } else {
+            return
+          }
+        }
+
   return (
      <div className="search-container">
-     <form ref={formRef} className="search">
+     <form onSubmit={goToFirstResult} ref={formRef} className="search">
        <input 
        ref={inputRef}
        type="text" 

@@ -27,6 +27,7 @@ const ProductPage = () => {
   const [transition, setTransition] = useState(false)
   const [width, setWidth] = useState(window.innerWidth)
 
+  productData && setDocumentTitle(`Euromobila | ${productData?.name}`)
   const activePrice = isCurrentOne || isCurrentTwo || isCurrentThree
 
   const {productId} = useParams()

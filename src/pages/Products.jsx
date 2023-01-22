@@ -9,10 +9,11 @@ import {useParams} from "react-router-dom"
 import Product from '../components/Product/Product'
 import "./Products.scss"
 import Spinner from '../components/Spinner'
+import { setDocumentTitle } from '../utils/setDocumentTitle'
 
 const Products = () => {
 const {categoryType} = useParams()
-
+setDocumentTitle(`Euromobila | ${categoryType.slice(0, 1).toUpperCase() + categoryType.slice(1)}`)
 const [products, setProducts] = useState(null)
 const [sortBy, setSortBy] = useState(localStorage.getItem('sortBy') || 'default');
  
