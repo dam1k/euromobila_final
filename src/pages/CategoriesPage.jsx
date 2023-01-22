@@ -22,6 +22,7 @@ const CategoriesPage = () => {
     .then(data => {
       if(data[0] !== undefined) {
     setCategoryInfo(data[0])
+    console.log(data[0])
       }
       else {
         navigate('/notfound')
@@ -45,11 +46,16 @@ const CategoriesPage = () => {
     return <Spinner/>
   }
   return (
-    <div id="categories" className="container">
-      <div>
+    <div id="categories" className={`container ${categoryName === "office" ? "category-office" : ''}`}>
+      <div className="category-info-container">
     <h2 className="title">{categoryInfo && categoryInfo.title}</h2>
       <p className="category-info">
-        {categoryInfo && categoryInfo.info}
+        {categoryInfo &&
+        <>
+         <p>{categoryInfo.info.split('-')[0]}</p>
+         <br/>
+         <p>{categoryInfo.info.split('-')[1]}</p>
+         </>}
       </p>
       </div>
         {categoryTypes && categoryTypes.map((category => {
