@@ -100,7 +100,7 @@ function changeImage(image) {
 return (
     <>
       {productData !== null && (
-        <div className="container">
+        <div className="container" id="product">
           <div className="product">
       <div className="product-img-container">
             <div className="product-img">

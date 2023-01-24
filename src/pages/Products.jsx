@@ -61,7 +61,7 @@ return <Spinner/>
 }
 
   return (
-    <div className="container">
+    <div className={`container ${products.length < 7 ? 'products-6' : ''}`} id="products">
       <div className="filter-container">
       <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} id="filter">
         <option value="default">Sortează după:</option>

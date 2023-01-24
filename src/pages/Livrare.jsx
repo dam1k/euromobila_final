@@ -34,22 +34,22 @@ const Livrare = () => {
 </thead>
 <tbody>
 <tr>
-     <td>Livrare</td>
+     <td><strong>Livrare</strong></td>
      <td>{shippingInfo[1].livrare}</td>
      <td>{shippingInfo[0].livrare}</td>
 </tr>
 <tr>
-     <td>Ansamblare</td>
+     <td><strong>Ansamblare</strong></td>
      <td>{shippingInfo[1].ansamblare}</td>
      <td>{shippingInfo[0].ansamblare}</td>
 </tr>
 <tr>
-     <td>Ridicare canapele</td>
+     <td><strong>Ridicare canapele</strong></td>
      <td>{shippingInfo[1].ridicare_canapele}</td>
      <td>{shippingInfo[0].ridicare_canapele}</td>
 </tr>
 <tr>
-     <td>Ridicare coltare</td>
+     <td><strong>Ridicare coltare</strong></td>
      <td>{shippingInfo[1].ridicare_coltare}</td>
      <td>{shippingInfo[0].ridicare_coltare}</td>
 </tr>

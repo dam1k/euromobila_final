@@ -45,6 +45,7 @@ const CategoriesPage = () => {
   if(categoryInfo.length === 0 || categoryTypes.length === 0) {
     return <Spinner/>
   }
+  
   return (
     <div id="categories" className={`container ${categoryName === "office" ? "category-office" : ''}`}>
       <div className="category-info-container">

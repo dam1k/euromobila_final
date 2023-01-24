@@ -35,7 +35,6 @@ const Header = () => {
       <div className="slider">
            <Swiper
            modules={[Navigation, Pagination]}
-          //  pagination={{ clickable: true }}
       spaceBetween={50}
       slidesPerView={1}
       ref={swiperRef}
