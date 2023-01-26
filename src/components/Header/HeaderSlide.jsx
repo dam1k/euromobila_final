@@ -9,7 +9,7 @@ const HeaderSlide = ({image, info}) => {
     {info && info.split('.').length > 1 &&
     (
     <div className="banner-text">
-    <h1 className="title">{info.split('.')[0]}.</h1>
+    <h1 className="title">{info.split('.')[0]}</h1>
     <h1 className="info">{info.split('.')[1]}</h1>
     </div>
     )

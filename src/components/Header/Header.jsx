@@ -8,9 +8,9 @@ import HeaderSlide from './HeaderSlide'
 import {BsArrowRightCircle} from "react-icons/bs"
 import {BsArrowLeftCircle} from "react-icons/bs"
 import "./Header.scss"
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Header = () => { 
   const [bannerData, setBannerData] = useState(null)
