@@ -16,8 +16,8 @@ export default {
           type: 'string'
      },
      {
-          name: 'ansamblare',
-          title: "Ansamblare",
+          name: 'asamblare',
+          title: "Asamblare",
           type: 'string' 
      },
      {

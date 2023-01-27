@@ -5,8 +5,6 @@ import './ProductModal.scss'
 
 const ProductModal = ({open, children}) => {
   if(!open) return null
-
-
   return ReactDOM.createPortal(
        <> 
         <div className="modal-overlay">
