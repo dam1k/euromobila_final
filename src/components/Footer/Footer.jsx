@@ -25,7 +25,7 @@ const Footer = () => {
         <h3>Contactează-ne</h3>
         <p><HiLocationMarker/> str. Calea Trusenilor 91, CC Creator Mall</p>
         <p><MdEmail/> euromobila@gmail.com</p>
-        <p><BsFillTelephoneInboundFill size={15}/> +373 0693 18 106</p>
+        <p><BsFillTelephoneInboundFill size={15}/> +373 693 18 106</p>
       </div>
 
       <div className="footer-info">

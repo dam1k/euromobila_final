@@ -42,7 +42,7 @@ const Contact = () => {
         <h3>Contactează-ne</h3>
         <p><HiLocationMarker/> str. Calea Trusenilor 91, CC Creator Mall</p>
         <p>Salon Euromobila</p>
-        <p><BsFillTelephoneInboundFill size={15}/> +373 0693 18 106</p>
+        <p><BsFillTelephoneInboundFill size={15}/> +373 693 18 106</p>
         <p><MdEmail/> euromobila.chisinau@gmail.com</p>
         <h3 className="orar">Orar</h3>
         <p>L-V 10:00 - 19:00</p>
