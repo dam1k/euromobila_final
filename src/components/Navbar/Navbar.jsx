@@ -59,6 +59,7 @@ const Navbar = () => {
   <div ref={menuRef} className="burger" onClick={() => {
     setActiveNavbar(prev => !prev)}}>
     <GiHamburgerMenu/>
+    <span>Meniu</span>
   </div>
 
   {width > breakpoint && <Search/>}

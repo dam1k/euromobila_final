@@ -41,6 +41,12 @@ transform:translateX(0);
   display: block;
   transition: all 0.2s ease;
   margin-left:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    margin-left:10px;
+  }
 }
 
 .navigation {
